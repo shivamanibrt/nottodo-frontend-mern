@@ -18,13 +18,13 @@ export const Table = ({ taskList, taskSwitcher, handleOnDelete }) => {
                 <td>{item.hr} hr(s)</td>
                 <td class="text-end">
                   <button
-                    onClick={() => handleOnDelete(item.id)}
+                    onClick={() => handleOnDelete(item._id)}
                     class="btn btn-danger"
                   >
                     <i class="fa-solid fa-trash"></i>
                   </button>{" "}
                   <button
-                    onClick={() => taskSwitcher(item.id, "bad")}
+                    onClick={() => taskSwitcher(item._id, "bad")}
                     class="btn btn-success"
                   >
                     <i class="fa-solid fa-right-long"></i>
@@ -48,7 +48,7 @@ export const Table = ({ taskList, taskSwitcher, handleOnDelete }) => {
                 <td class="text-end">
                   <button
                     class="btn btn-warning"
-                    onClick={() => taskSwitcher(item.id, "entry")}
+                    onClick={() => taskSwitcher(item._id, "entry")}
                   >
                     <i class="fa-solid fa-left-long"></i>
                   </button>{" "}

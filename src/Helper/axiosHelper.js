@@ -17,7 +17,7 @@ export const fetchTask = async () => {
 export const postTask = async (obj) => {
     try {
         const { data } = await axios.post(apiEp, obj);
-        return data
+        return data;
     } catch (error) {
         return {
             status: 'error',
@@ -25,9 +25,10 @@ export const postTask = async (obj) => {
         }
     }
 }
-export const deleteTask = async (obj) => {
+
+export const switchServerTask = async (obj) => {
     try {
-        const { data } = await axios.post(`${apiEp}${obj}`);
+        const { data } = await axios.patch(apiEp, obj);
         return data
     } catch (error) {
         return {
@@ -36,3 +37,16 @@ export const deleteTask = async (obj) => {
         }
     }
 }
+
+export const deleteTask = async (ids) => {
+    try {
+        // const { data } = await axios.delete(apiEp, { data: ids });
+        const { data } = await axios.delete(apiEp, { data: { _id: ids } });
+        return data;
+    } catch (error) {
+        return {
+            status: "error",
+            message: error.message,
+        };
+    }
+};

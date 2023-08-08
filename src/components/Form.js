@@ -17,7 +17,6 @@ export const Form = ({ addTask }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    // const id = reandmonStrGenerator(6);
     addTask(frmDt);
   };
 
