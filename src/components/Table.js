@@ -53,7 +53,7 @@ export const Table = ({ taskList, taskSwitcher, handleOnDelete }) => {
                     <i class="fa-solid fa-left-long"></i>
                   </button>{" "}
                   <button
-                    onClick={() => handleOnDelete(item.id)}
+                    onClick={() => handleOnDelete(item._id)}
                     class="btn btn-danger"
                   >
                     <i class="fa-solid fa-trash"></i>

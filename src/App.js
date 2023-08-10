@@ -12,12 +12,10 @@ function App() {
 
   useEffect(() => {
     getTaskFromServer();
-  }, []);
-
-  useEffect(() => {
     const totalHr = taskList.reduce((subttl, { hr }) => subttl + +hr, 0);
     setHr(totalHr);
   }, [taskList]);
+
 
   const getTaskFromServer = async () => {
     const data = await fetchTask();

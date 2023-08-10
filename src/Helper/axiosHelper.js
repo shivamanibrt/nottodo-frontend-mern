@@ -40,7 +40,6 @@ export const switchServerTask = async (obj) => {
 
 export const deleteTask = async (ids) => {
     try {
-        // const { data } = await axios.delete(apiEp, { data: ids });
         const { data } = await axios.delete(apiEp, { data: { _id: ids } });
         return data;
     } catch (error) {
